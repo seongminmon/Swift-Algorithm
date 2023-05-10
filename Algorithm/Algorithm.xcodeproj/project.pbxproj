@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		24DD15432A0A6BFD00AA1845 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DD151E2A0A687900AA1845 /* main.swift */; };
+		24DD15702A0B5B2700AA1845 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DD156F2A0B5B2700AA1845 /* main.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -30,7 +30,7 @@
 		24DD151B2A0A687900AA1845 /* bruteforce_05.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bruteforce_05.swift; sourceTree = "<group>"; };
 		24DD151C2A0A687900AA1845 /* bruteforce_01.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bruteforce_01.swift; sourceTree = "<group>"; };
 		24DD151D2A0A687900AA1845 /* bruteforce_04.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bruteforce_04.swift; sourceTree = "<group>"; };
-		24DD151E2A0A687900AA1845 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		24DD151E2A0A687900AA1845 /* bruteforce_06.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bruteforce_06.swift; sourceTree = "<group>"; };
 		24DD15202A0A687900AA1845 /* binarysearch_01.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = binarysearch_01.swift; sourceTree = "<group>"; };
 		24DD15212A0A687900AA1845 /* binarysearch_02.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = binarysearch_02.swift; sourceTree = "<group>"; };
 		24DD15232A0A687900AA1845 /* sort_02.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sort_02.swift; sourceTree = "<group>"; };
@@ -57,6 +57,8 @@
 		24DD15442A0A6E5A00AA1845 /* fileIO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = fileIO.swift; sourceTree = "<group>"; };
 		24DD15452A0A6E5A00AA1845 /* timeCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = timeCheck.swift; sourceTree = "<group>"; };
 		24DD15462A0A6E5A00AA1845 /* Algorithm-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Algorithm-Bridging-Header.h"; sourceTree = "<group>"; };
+		24DD156D2A0B537C00AA1845 /* bruteforce_07.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bruteforce_07.swift; sourceTree = "<group>"; };
+		24DD156F2A0B5B2700AA1845 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,8 +103,7 @@
 		24DD150A2A0A656300AA1845 /* BOJ */ = {
 			isa = PBXGroup;
 			children = (
-				24DD15102A0A662500AA1845 /* Unsolve */,
-				24DD150F2A0A661A00AA1845 /* Solve */,
+				24DD150C2A0A658300AA1845 /* 23_05 */,
 			);
 			path = BOJ;
 			sourceTree = "<group>";
@@ -121,21 +122,6 @@
 				24DD15032A0A64B300AA1845 /* 7662.swift */,
 			);
 			path = 23_05;
-			sourceTree = "<group>";
-		};
-		24DD150F2A0A661A00AA1845 /* Solve */ = {
-			isa = PBXGroup;
-			children = (
-				24DD150C2A0A658300AA1845 /* 23_05 */,
-			);
-			path = Solve;
-			sourceTree = "<group>";
-		};
-		24DD15102A0A662500AA1845 /* Unsolve */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Unsolve;
 			sourceTree = "<group>";
 		};
 		24DD15172A0A687900AA1845 /* HighScore_Kit */ = {
@@ -163,7 +149,8 @@
 				24DD15192A0A687900AA1845 /* bruteforce_03.swift */,
 				24DD151D2A0A687900AA1845 /* bruteforce_04.swift */,
 				24DD151B2A0A687900AA1845 /* bruteforce_05.swift */,
-				24DD151E2A0A687900AA1845 /* main.swift */,
+				24DD151E2A0A687900AA1845 /* bruteforce_06.swift */,
+				24DD156D2A0B537C00AA1845 /* bruteforce_07.swift */,
 			);
 			path = 05_BruteForce;
 			sourceTree = "<group>";
@@ -209,6 +196,7 @@
 		24DD152D2A0A687900AA1845 /* 06_Greedy */ = {
 			isa = PBXGroup;
 			children = (
+				24DD156F2A0B5B2700AA1845 /* main.swift */,
 			);
 			path = 06_Greedy;
 			sourceTree = "<group>";
@@ -312,7 +300,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24DD15432A0A6BFD00AA1845 /* main.swift in Sources */,
+				24DD15702A0B5B2700AA1845 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
