@@ -2,33 +2,19 @@
 //  main.swift
 //  Algorithm
 //
-//  Created by 김성민 on 2023/05/10.
+//  Created by 김성민 on 2023/05/12.
 //
-// 체육복
+// 조이스틱
 // 탐욕법(Greedy)
-// LV.1
-// https://school.programmers.co.kr/learn/courses/30/lessons/42862?language=swift
+// LV.2
+// https://school.programmers.co.kr/learn/courses/30/lessons/42860
 
 import Foundation
 
-func solution(_ n:Int, _ lost:[Int], _ reserve:[Int]) -> Int {
+func solution(_ name:String) -> Int {
     // solving...
-    
     return 0
 }
 
-print(solution(
-    5,
-    [2, 4],
-    [1, 3, 5]
-))
-print(solution(
-    5,
-    [2, 4],
-    [3]
-))
-print(solution(
-    3,
-    [3],
-    [1]
-))
+print(solution("JEROEN"))
+print(solution("JAN"))
