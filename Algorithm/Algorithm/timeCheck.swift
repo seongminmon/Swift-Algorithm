@@ -4,7 +4,7 @@
 //
 //  Created by 김성민 on 2022/05/29.
 //
-// 실행 시간 측정 코드
+// 실행 시간 측정
 
 import Foundation
 
