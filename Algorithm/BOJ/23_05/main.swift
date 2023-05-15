@@ -4,8 +4,7 @@
 //
 //  Created by 김성민 on 2023/05/15.
 //
-// 17780 : 새로운 게임
-// https://www.acmicpc.net/problem/17780
+// 18500 : 미네랄 2
+// https://www.acmicpc.net/problem/18500
 
 import Foundation
-
