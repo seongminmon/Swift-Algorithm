@@ -2,10 +2,10 @@
 //  main.swift
 //  Algorithm
 //
-//  Created by 김성민 on 2023/05/20.
+//  Created by 김성민 on 2023/05/21.
 //
-// 16967 : 배열 복원하기
-// https://www.acmicpc.net/problem/16967
+// 17182 : 우주 탐사선
+// https://www.acmicpc.net/problem/17182
 
 import Foundation
 
