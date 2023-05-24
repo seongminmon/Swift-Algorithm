@@ -2,10 +2,10 @@
 //  main.swift
 //  Algorithm
 //
-//  Created by 김성민 on 2023/05/23.
+//  Created by 김성민 on 2023/05/24.
 //
-// 4256 : 트리
-// https://www.acmicpc.net/problem/4256
+// 13335 : 트럭
+// https://www.acmicpc.net/problem/13335
 
 import Foundation
 
