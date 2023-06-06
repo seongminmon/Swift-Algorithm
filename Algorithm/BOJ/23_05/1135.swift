@@ -23,7 +23,7 @@ func dfs(_ node: Int) -> Int {
         childs.append(dfs(next))
     }
     childs.sort(by: >)
-    
+
     var Max = 0
     for i in 0..<childs.count {
         Max = max(Max, childs[i] + i + 1)
