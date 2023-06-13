@@ -7,6 +7,7 @@
 // 10836 : 여왕벌
 // https://www.acmicpc.net/problem/10836
 
+// 부분 성공
 import Foundation
 
 let mn = readLine()!.split(separator: " ").map { Int(String($0))! }
