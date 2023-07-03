@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		245445D52A516406009C225E /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245445D42A516406009C225E /* main.swift */; };
+		245445D72A51A770009C225E /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245445D62A51A770009C225E /* main.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -106,7 +106,8 @@
 		245445CB2A4B0BA9009C225E /* 2020_kakao_01.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 2020_kakao_01.swift; sourceTree = "<group>"; };
 		245445CE2A4BDBB6009C225E /* 2020_kakao_02.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 2020_kakao_02.swift; sourceTree = "<group>"; };
 		245445D22A50092C009C225E /* 2020_kakao_03.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 2020_kakao_03.swift; sourceTree = "<group>"; };
-		245445D42A516406009C225E /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		245445D42A516406009C225E /* 2020_kakao_04.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 2020_kakao_04.swift; sourceTree = "<group>"; };
+		245445D62A51A770009C225E /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		245BD3DB2A25C842007B0462 /* 1976.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 1976.swift; sourceTree = "<group>"; };
 		245BD3F62A289AF5007B0462 /* 2164.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 2164.swift; sourceTree = "<group>"; };
 		245BD3F82A289CCB007B0462 /* 1244.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 1244.swift; sourceTree = "<group>"; };
@@ -271,7 +272,8 @@
 				245445CB2A4B0BA9009C225E /* 2020_kakao_01.swift */,
 				245445CE2A4BDBB6009C225E /* 2020_kakao_02.swift */,
 				245445D22A50092C009C225E /* 2020_kakao_03.swift */,
-				245445D42A516406009C225E /* main.swift */,
+				245445D42A516406009C225E /* 2020_kakao_04.swift */,
+				245445D62A51A770009C225E /* main.swift */,
 			);
 			name = "2020 카카오 인턴십";
 			path = "2020 카카오 인턴십";
@@ -533,7 +535,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				245445D52A516406009C225E /* main.swift in Sources */,
+				245445D72A51A770009C225E /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
