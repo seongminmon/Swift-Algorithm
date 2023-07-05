@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2457E8382A550DDD0031C219 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2457E8372A550DDD0031C219 /* main.swift */; };
+		2457E83A2A551EA00031C219 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2457E8392A551EA00031C219 /* main.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -225,7 +225,8 @@
 		245446672A53FD02009C225E /* 9095.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 9095.swift; sourceTree = "<group>"; };
 		245446682A53FD02009C225E /* 4811.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 4811.swift; sourceTree = "<group>"; };
 		245446692A53FD02009C225E /* 2606.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 2606.swift; sourceTree = "<group>"; };
-		2457E8372A550DDD0031C219 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		2457E8372A550DDD0031C219 /* 2021_kakao_02.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 2021_kakao_02.swift; sourceTree = "<group>"; };
+		2457E8392A551EA00031C219 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		245BD3DB2A25C842007B0462 /* 1976.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 1976.swift; sourceTree = "<group>"; };
 		245BD3F62A289AF5007B0462 /* 2164.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 2164.swift; sourceTree = "<group>"; };
 		245BD3F82A289CCB007B0462 /* 1244.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 1244.swift; sourceTree = "<group>"; };
@@ -398,7 +399,8 @@
 			isa = PBXGroup;
 			children = (
 				245445E62A53F87D009C225E /* 2021_kakao_01.swift */,
-				2457E8372A550DDD0031C219 /* main.swift */,
+				2457E8372A550DDD0031C219 /* 2021_kakao_02.swift */,
+				2457E8392A551EA00031C219 /* main.swift */,
 			);
 			name = "2021 카카오 채용연계형 인턴십";
 			path = "2021 카카오 채용연계형 인턴십";
@@ -818,7 +820,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2457E8382A550DDD0031C219 /* main.swift in Sources */,
+				2457E83A2A551EA00031C219 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
