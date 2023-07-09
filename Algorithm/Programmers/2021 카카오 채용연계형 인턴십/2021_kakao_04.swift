@@ -15,7 +15,7 @@ struct Heap<T> {
     var nodes: [T] = []
     let comparer: (T,T) -> Bool
     
-    init(comparer: @escaping (T, T) -> Bool) {
+    init(comparer: @escaping (T,T) -> Bool) {
         self.comparer = comparer
     }
     
@@ -44,6 +44,7 @@ struct Heap<T> {
         while idx < nodes.count {
             let left = idx * 2 + 1
             let right = left + 1
+            
             if right < nodes.count {
                 if comparer(nodes[left], nodes[right]) && comparer(nodes[idx], nodes[right]) {
                     nodes.swapAt(idx, right)
@@ -71,70 +72,59 @@ struct Heap<T> {
 }
 
 func solution(_ n:Int, _ start:Int, _ end:Int, _ roads:[[Int]], _ traps:[Int]) -> Int {
-    var originGraph = [[(Int,Int)]](repeating: [], count: n+1)
+    var originalGraph = [[(Int,Int)]](repeating: [], count: n+1)
     var reversedGraph = [[(Int,Int)]](repeating: [], count: n+1)
+    var isTrap = [Int](repeating: -1, count: n+1)
+    
     for road in roads {
         let (a,b,c) = (road[0], road[1], road[2])
-        originGraph[a].append((b,c))
+        originalGraph[a].append((b,c))
         reversedGraph[b].append((a,c))
     }
     
-    var isTrap = [Int](repeating: -1, count: n+1)
-    for i in 0..<traps.count { isTrap[traps[i]] = i }
+    for i in 0..<traps.count {
+        isTrap[traps[i]] = i
+    }
     
-    func bitmask(_ idx: Int, _ state: Int) -> Bool {
+    func bitmask(_ state: Int, _ idx: Int) -> Bool {
         return 1 << isTrap[idx] & state != 0
     }
     
-    var distance = [[Int]](repeating: [Int](repeating: Int.max, count: n+1), count: 1024)
-    distance[0][start] = 0
+    var distance = [[Int]](repeating: [Int](repeating: Int.max, count: 1024), count: n+1)
+    distance[start][0] = 0
     var queue = Heap<(Int,Int,Int)> { $0.0 > $1.0 }
-    queue.enqueue((distance[0][start], start, 0))
+    queue.enqueue((0, start, 0))
     while !queue.isEmpty {
         let (dist, now, state) = queue.dequeue()!
         
         if now == end { return dist }
-        if distance[state][now] != dist { continue }
+        if distance[now][state] != dist { continue }
         
-        for (next, nextDist) in originGraph[now] {
-            var isReverse = 0
-            if isTrap[now] != -1 && bitmask(now, state) {
-                isReverse ^= 1
-            }
-            if isTrap[next] != -1 && bitmask(next, state) {
-                isReverse ^= 1
-            }
-            if isReverse != 0 { continue }
-            
-            var nextState = state
-            if isTrap[next] != -1 {
-                nextState ^= (1 << isTrap[next])
-            }
-            if distance[nextState][next] > dist + nextDist {
-                distance[nextState][next] = dist + nextDist
-                queue.enqueue((distance[nextState][next], next, nextState))
+        func step(_ graph: [[(Int,Int)]], _ isReverse: Bool) {
+            for (next, nextDist) in graph[now] {
+                var isReverse = isReverse
+                if isTrap[now] != -1 && bitmask(state, now) {
+                    isReverse.toggle()
+                }
+                if isTrap[next] != -1 && bitmask(state, next) {
+                    isReverse.toggle()
+                }
+                if isReverse { continue }
+                
+                var nextState = state
+                if isTrap[next] != -1 {
+                    nextState ^= (1 << isTrap[next])
+                }
+                let cost = dist + nextDist
+                if distance[next][nextState] > cost {
+                    distance[next][nextState] = cost
+                    queue.enqueue((cost, next, nextState))
+                }
             }
         }
         
-        for (next, nextDist) in reversedGraph[now] {
-            var isReverse = 0
-            if isTrap[now] != -1 && bitmask(now, state) {
-                isReverse ^= 1
-            }
-            if isTrap[next] != -1 && bitmask(next, state) {
-                isReverse ^= 1
-            }
-            if isReverse == 0 { continue }
-            
-            var nextState = state
-            if isTrap[next] != -1 {
-                nextState ^= (1 << isTrap[next])
-            }
-            if distance[nextState][next] > dist + nextDist {
-                distance[nextState][next] = dist + nextDist
-                queue.enqueue((distance[nextState][next], next, nextState))
-            }
-        }
+        step(originalGraph, false)
+        step(reversedGraph, true)
     }
     
     return -1

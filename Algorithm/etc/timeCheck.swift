@@ -18,4 +18,3 @@ func processTime(closure: () -> ()){
     let processTime = CFAbsoluteTimeGetCurrent() - start
     print("경과 시간: " + String(format: "%.4f", processTime))
 }
-

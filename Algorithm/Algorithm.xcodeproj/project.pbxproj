@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2457E84E2A5946F30031C219 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2457E84D2A5946F30031C219 /* main.swift */; };
+		2457E85B2A5AD3040031C219 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2457E8552A5AD13B0031C219 /* main.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -228,7 +228,10 @@
 		2457E8372A550DDD0031C219 /* 2021_kakao_02.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 2021_kakao_02.swift; sourceTree = "<group>"; };
 		2457E8392A551EA00031C219 /* 2021_kakao_03.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 2021_kakao_03.swift; sourceTree = "<group>"; };
 		2457E84B2A585D0F0031C219 /* 2021_kakao_04.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 2021_kakao_04.swift; sourceTree = "<group>"; };
-		2457E84D2A5946F30031C219 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		2457E84D2A5946F30031C219 /* 2021_kakao_05.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 2021_kakao_05.swift; sourceTree = "<group>"; };
+		2457E8532A5AD0E70031C219 /* 2018_kakao_01.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 2018_kakao_01.swift; sourceTree = "<group>"; };
+		2457E8552A5AD13B0031C219 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		2457E8582A5AD1B00031C219 /* 2018_kakao_02.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 2018_kakao_02.swift; sourceTree = "<group>"; };
 		245BD3DB2A25C842007B0462 /* 1976.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 1976.swift; sourceTree = "<group>"; };
 		245BD3F62A289AF5007B0462 /* 2164.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 2164.swift; sourceTree = "<group>"; };
 		245BD3F82A289CCB007B0462 /* 1244.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 1244.swift; sourceTree = "<group>"; };
@@ -404,7 +407,7 @@
 				2457E8372A550DDD0031C219 /* 2021_kakao_02.swift */,
 				2457E8392A551EA00031C219 /* 2021_kakao_03.swift */,
 				2457E84B2A585D0F0031C219 /* 2021_kakao_04.swift */,
-				2457E84D2A5946F30031C219 /* main.swift */,
+				2457E84D2A5946F30031C219 /* 2021_kakao_05.swift */,
 			);
 			name = "2021 카카오 채용연계형 인턴십";
 			path = "2021 카카오 채용연계형 인턴십";
@@ -569,12 +572,31 @@
 			path = 22_12;
 			sourceTree = "<group>";
 		};
+		2457E8522A5AD0B60031C219 /* 2018 KAKAO BLIND RECRUITMENT */ = {
+			isa = PBXGroup;
+			children = (
+				2457E8572A5AD17B0031C219 /* 1차 */,
+			);
+			path = "2018 KAKAO BLIND RECRUITMENT";
+			sourceTree = "<group>";
+		};
+		2457E8572A5AD17B0031C219 /* 1차 */ = {
+			isa = PBXGroup;
+			children = (
+				2457E8532A5AD0E70031C219 /* 2018_kakao_01.swift */,
+				2457E8582A5AD1B00031C219 /* 2018_kakao_02.swift */,
+				2457E8552A5AD13B0031C219 /* main.swift */,
+			);
+			name = "1차";
+			path = "1차";
+			sourceTree = "<group>";
+		};
 		24DD14F72A0A64B300AA1845 = {
 			isa = PBXGroup;
 			children = (
 				24DD150A2A0A656300AA1845 /* BOJ */,
 				24DD150B2A0A656F00AA1845 /* Programmers */,
-				24DD15022A0A64B300AA1845 /* Algorithm */,
+				24DD15022A0A64B300AA1845 /* etc */,
 				24DD15012A0A64B300AA1845 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -587,14 +609,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		24DD15022A0A64B300AA1845 /* Algorithm */ = {
+		24DD15022A0A64B300AA1845 /* etc */ = {
 			isa = PBXGroup;
 			children = (
 				24DD15462A0A6E5A00AA1845 /* Algorithm-Bridging-Header.h */,
 				24DD15442A0A6E5A00AA1845 /* fileIO.swift */,
 				24DD15452A0A6E5A00AA1845 /* timeCheck.swift */,
 			);
-			path = Algorithm;
+			path = etc;
 			sourceTree = "<group>";
 		};
 		24DD150A2A0A656300AA1845 /* BOJ */ = {
@@ -614,6 +636,7 @@
 				245445BE2A496D20009C225E /* 2019 카카오 개발자 겨울 인턴십 */,
 				245445CD2A4B0D32009C225E /* 2020 카카오 인턴십 */,
 				245445E82A53F8F0009C225E /* 2021 카카오 채용연계형 인턴십 */,
+				2457E8522A5AD0B60031C219 /* 2018 KAKAO BLIND RECRUITMENT */,
 			);
 			path = Programmers;
 			sourceTree = "<group>";
@@ -824,7 +847,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2457E84E2A5946F30031C219 /* main.swift in Sources */,
+				2457E85B2A5AD3040031C219 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
