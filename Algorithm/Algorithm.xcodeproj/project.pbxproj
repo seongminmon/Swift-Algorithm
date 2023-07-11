@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		24A9D9FC2A5C34E100CD8EB6 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A9D9FB2A5C34E100CD8EB6 /* main.swift */; };
+		24A9D9FE2A5D05B100CD8EB6 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A9D9FD2A5D05B100CD8EB6 /* main.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -238,7 +238,8 @@
 		245BD3FA2A28A2CF007B0462 /* 1765.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 1765.swift; sourceTree = "<group>"; };
 		245BD3FC2A2ADC71007B0462 /* 1189.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 1189.swift; sourceTree = "<group>"; };
 		245BD4102A2CD4EB007B0462 /* 1135.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 1135.swift; sourceTree = "<group>"; };
-		24A9D9FB2A5C34E100CD8EB6 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		24A9D9FB2A5C34E100CD8EB6 /* 2018_kakao_04.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 2018_kakao_04.swift; sourceTree = "<group>"; };
+		24A9D9FD2A5D05B100CD8EB6 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		24DD15002A0A64B300AA1845 /* Algorithm */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Algorithm; sourceTree = BUILT_PRODUCTS_DIR; };
 		24DD15032A0A64B300AA1845 /* 7662.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 7662.swift; sourceTree = "<group>"; };
 		24DD15192A0A687900AA1845 /* bruteforce_03.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bruteforce_03.swift; sourceTree = "<group>"; };
@@ -588,7 +589,8 @@
 				2457E8532A5AD0E70031C219 /* 2018_kakao_01.swift */,
 				2457E8582A5AD1B00031C219 /* 2018_kakao_02.swift */,
 				2457E8552A5AD13B0031C219 /* 2018_kakao_03.swift */,
-				24A9D9FB2A5C34E100CD8EB6 /* main.swift */,
+				24A9D9FB2A5C34E100CD8EB6 /* 2018_kakao_04.swift */,
+				24A9D9FD2A5D05B100CD8EB6 /* main.swift */,
 			);
 			name = "1차";
 			path = "1차";
@@ -858,7 +860,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24A9D9FC2A5C34E100CD8EB6 /* main.swift in Sources */,
+				24A9D9FE2A5D05B100CD8EB6 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
