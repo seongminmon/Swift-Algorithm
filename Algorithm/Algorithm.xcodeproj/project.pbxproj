@@ -6,10 +6,6 @@
 	objectVersion = 56;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		244892012A6B989000829751 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244892002A6B989000829751 /* main.swift */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		24DD14FE2A0A64B300AA1845 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -114,7 +110,8 @@
 		244891EC2A6816D500829751 /* 2019_kakao_01.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 2019_kakao_01.swift; sourceTree = "<group>"; };
 		244891FC2A6B836800829751 /* 2019_kakao_02.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 2019_kakao_02.swift; sourceTree = "<group>"; };
 		244891FE2A6B839F00829751 /* 2019_kakao_05.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 2019_kakao_05.swift; sourceTree = "<group>"; };
-		244892002A6B989000829751 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		244892002A6B989000829751 /* 2019_kakao_03.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 2019_kakao_03.swift; sourceTree = "<group>"; };
+		2448921D2A6CDFB200829751 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		245445462A2DB9CC009C225E /* 18427.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 18427.swift; sourceTree = "<group>"; };
 		245445482A2EE442009C225E /* 18429.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 18429.swift; sourceTree = "<group>"; };
 		2454454C2A2EE4AD009C225E /* 2696.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 2696.swift; sourceTree = "<group>"; };
@@ -507,8 +504,9 @@
 			children = (
 				244891EC2A6816D500829751 /* 2019_kakao_01.swift */,
 				244891FC2A6B836800829751 /* 2019_kakao_02.swift */,
+				244892002A6B989000829751 /* 2019_kakao_03.swift */,
+				2448921D2A6CDFB200829751 /* main.swift */,
 				244891FE2A6B839F00829751 /* 2019_kakao_05.swift */,
-				244892002A6B989000829751 /* main.swift */,
 			);
 			path = "2019 KAKAO BLIND RECRUITMENT";
 			sourceTree = "<group>";
@@ -1134,7 +1132,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				244892012A6B989000829751 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
