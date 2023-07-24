@@ -2,49 +2,46 @@
 //  main.swift
 //  Algorithm
 //
-//  Created by 김성민 on 2023/07/22.
+//  Created by 김성민 on 2023/07/19.
 //
-// 오픈채팅방
+// 실패율
 // 2019 KAKAO BLIND RECRUITMENT
-// Lv.2
-// https://school.programmers.co.kr/learn/courses/30/lessons/42888
+// Lv.1
+// https://school.programmers.co.kr/learn/courses/30/lessons/42889
 
 import Foundation
 
-struct Message {
-    var id: String
-    var order: String
-}
+func solution(_ N:Int, _ stages:[Int]) -> [Int] {
+    var chellenging = [Int](repeating: 0, count: N+2)
+    for stage in stages {
+        chellenging[stage] += 1
+    }
+    
+    var cleared = [Int](repeating: 0, count: N+1)
+    var sum = chellenging[N+1]
+    for i in stride(from: N, through: 1, by: -1) {
+        sum += chellenging[i]
+        cleared[i] = sum
+    }
+    
+    var failure = [(Float,Int)](repeating: (0,0), count: N+1)
+    for i in 1 ... N {
+        failure[i].0 = Float(chellenging[i]) / Float(cleared[i])
+        failure[i].1 = i
+    }
+    
+    // 실패율은 내림차순, 스테이지는 오름차순 정렬
+    failure.sort { $0.0 > $1.0 || $0.1 < $1.1 }
 
-func solution(_ record:[String]) -> [String] {
-    var dict = [String: String]()
-    var messages = [Message]()
-    for i in 0..<record.count {
-        let str = record[i].split(separator: " ").map { String($0) }
-        let order = str[0]
-        let uid = str[1]
-        
-        switch order {
-        case "Enter":
-            let name = str[2]
-            dict[uid] = name
-            messages.append(Message(id: uid, order: order))
-        case "Leave":
-            messages.append(Message(id: uid, order: order))
-        case "Change":
-            let name = str[2]
-            dict[uid] = name
-        default: break
+    var result = [Int]()
+    for i in 0 ... N {
+        if failure[i].1 != 0 {
+            result.append(failure[i].1)
         }
     }
     
-    return messages.map { message in
-        if message.order == "Enter" {
-            return "\(dict[message.id]!)님이 들어왔습니다."
-        } else {
-            return "\(dict[message.id]!)님이 나갔습니다."
-        }
-    }
+    return result
 }
 
-print(solution(["Enter uid1234 Muzi", "Enter uid4567 Prodo","Leave uid1234","Enter uid1234 Prodo","Change uid4567 Ryan"]))
+print(solution(5, [2, 1, 2, 6, 2, 4, 3, 3]))
+print(solution(4, [4,4,4,4,4]))

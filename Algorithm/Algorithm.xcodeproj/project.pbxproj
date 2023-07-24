@@ -6,6 +6,10 @@
 	objectVersion = 56;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		24AC40222A6E19A7007C25EB /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC40212A6E19A7007C25EB /* main.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		24DD14FE2A0A64B300AA1845 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -107,11 +111,11 @@
 		244891652A64F41100829751 /* 2018_kakao_3_03.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 2018_kakao_3_03.swift; sourceTree = "<group>"; };
 		244891672A658A4F00829751 /* 2018_kakao_3_04.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 2018_kakao_3_04.swift; sourceTree = "<group>"; };
 		244891692A66514800829751 /* 2018_kakao_3_05.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 2018_kakao_3_05.swift; sourceTree = "<group>"; };
-		244891EC2A6816D500829751 /* 2019_kakao_01.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 2019_kakao_01.swift; sourceTree = "<group>"; };
-		244891FC2A6B836800829751 /* 2019_kakao_02.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 2019_kakao_02.swift; sourceTree = "<group>"; };
-		244891FE2A6B839F00829751 /* 2019_kakao_05.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 2019_kakao_05.swift; sourceTree = "<group>"; };
+		244891EC2A6816D500829751 /* 2019_kakao_02.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 2019_kakao_02.swift; sourceTree = "<group>"; };
+		244891FC2A6B836800829751 /* 2019_kakao_01.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 2019_kakao_01.swift; sourceTree = "<group>"; };
+		244891FE2A6B839F00829751 /* 2019_kakao_04.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 2019_kakao_04.swift; sourceTree = "<group>"; };
 		244892002A6B989000829751 /* 2019_kakao_03.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 2019_kakao_03.swift; sourceTree = "<group>"; };
-		2448921D2A6CDFB200829751 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		2448921D2A6CDFB200829751 /* 2019_kakao_05.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 2019_kakao_05.swift; sourceTree = "<group>"; };
 		245445462A2DB9CC009C225E /* 18427.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 18427.swift; sourceTree = "<group>"; };
 		245445482A2EE442009C225E /* 18429.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 18429.swift; sourceTree = "<group>"; };
 		2454454C2A2EE4AD009C225E /* 2696.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 2696.swift; sourceTree = "<group>"; };
@@ -346,6 +350,7 @@
 		24A9DA492A5FFB3300CD8EB6 /* 16234.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 16234.swift; sourceTree = "<group>"; };
 		24A9DA4A2A5FFB3300CD8EB6 /* 18428.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 18428.swift; sourceTree = "<group>"; };
 		24A9DA4B2A5FFB3300CD8EB6 /* 10816.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 10816.swift; sourceTree = "<group>"; };
+		24AC40212A6E19A7007C25EB /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		24DD15002A0A64B300AA1845 /* Algorithm */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Algorithm; sourceTree = BUILT_PRODUCTS_DIR; };
 		24DD15032A0A64B300AA1845 /* 7662.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 7662.swift; sourceTree = "<group>"; };
 		24DD15192A0A687900AA1845 /* bruteforce_03.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bruteforce_03.swift; sourceTree = "<group>"; };
@@ -502,11 +507,12 @@
 		244891FB2A6B82A600829751 /* 2019 KAKAO BLIND RECRUITMENT */ = {
 			isa = PBXGroup;
 			children = (
-				244891EC2A6816D500829751 /* 2019_kakao_01.swift */,
-				244891FC2A6B836800829751 /* 2019_kakao_02.swift */,
+				244891FC2A6B836800829751 /* 2019_kakao_01.swift */,
+				244891EC2A6816D500829751 /* 2019_kakao_02.swift */,
 				244892002A6B989000829751 /* 2019_kakao_03.swift */,
-				2448921D2A6CDFB200829751 /* main.swift */,
-				244891FE2A6B839F00829751 /* 2019_kakao_05.swift */,
+				244891FE2A6B839F00829751 /* 2019_kakao_04.swift */,
+				2448921D2A6CDFB200829751 /* 2019_kakao_05.swift */,
+				24AC40212A6E19A7007C25EB /* main.swift */,
 			);
 			path = "2019 KAKAO BLIND RECRUITMENT";
 			sourceTree = "<group>";
@@ -1132,6 +1138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24AC40222A6E19A7007C25EB /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
