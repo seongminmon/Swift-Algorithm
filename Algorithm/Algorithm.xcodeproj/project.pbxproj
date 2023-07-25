@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		24AC40222A6E19A7007C25EB /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC40212A6E19A7007C25EB /* main.swift */; };
+		24AC40252A6FA068007C25EB /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC40212A6E19A7007C25EB /* main.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -351,6 +351,7 @@
 		24A9DA4A2A5FFB3300CD8EB6 /* 18428.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 18428.swift; sourceTree = "<group>"; };
 		24A9DA4B2A5FFB3300CD8EB6 /* 10816.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 10816.swift; sourceTree = "<group>"; };
 		24AC40212A6E19A7007C25EB /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		24AC40232A6F6D03007C25EB /* 2019_kakao_07.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 2019_kakao_07.swift; sourceTree = "<group>"; };
 		24DD15002A0A64B300AA1845 /* Algorithm */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Algorithm; sourceTree = BUILT_PRODUCTS_DIR; };
 		24DD15032A0A64B300AA1845 /* 7662.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 7662.swift; sourceTree = "<group>"; };
 		24DD15192A0A687900AA1845 /* bruteforce_03.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bruteforce_03.swift; sourceTree = "<group>"; };
@@ -513,6 +514,7 @@
 				244891FE2A6B839F00829751 /* 2019_kakao_04.swift */,
 				2448921D2A6CDFB200829751 /* 2019_kakao_05.swift */,
 				24AC40212A6E19A7007C25EB /* main.swift */,
+				24AC40232A6F6D03007C25EB /* 2019_kakao_07.swift */,
 			);
 			path = "2019 KAKAO BLIND RECRUITMENT";
 			sourceTree = "<group>";
@@ -1138,7 +1140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24AC40222A6E19A7007C25EB /* main.swift in Sources */,
+				24AC40252A6FA068007C25EB /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
