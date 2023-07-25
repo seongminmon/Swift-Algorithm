@@ -6,14 +6,12 @@
 //
 // 블록 게임
 // 2019 KAKAO BLIND RECRUITMENT
-// Lv.3
+// Lv.4
 // https://school.programmers.co.kr/learn/courses/30/lessons/42894
 
 import Foundation
 
 func solution(_ board:[[Int]]) -> Int {
-    // case6: 시간초과
-    
     let n = board.count
     var board = board
 
