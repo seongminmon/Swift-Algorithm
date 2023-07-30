@@ -17,24 +17,19 @@ func solution(_ n:Int, _ build_frame:[[Int]]) -> [[Int]] {
     func canBuild(_ x: Int, _ y: Int, _ a: Int) -> Bool {
         if a == 0 {
             // 기둥 설치
-            // 1. 바닥 위에 있거나
-            // 2. 보의 한쪽 끝 부분 위에 있거나
-            // 3. 다른 기둥위에 있거나
             if y == 0 ||
-                map[x][y][1] ||
-                (x-1 >= 0 && map[x-1][y][1]) ||
-                (y-1 <= n && map[x][y-1][0]) {
+            map[x][y][1] ||
+            (x-1 >= 0 && map[x-1][y][1]) ||
+            (y-1 >= 0 && map[x][y-1][0]) {
                 return true
             } else {
                 return false
             }
         } else {
             // 보 설치
-            // 1. 한쪽 끝 부분이 기둥 위에 있거나
-            // 2. 양쪽 끝 부분이 다른 보와 동시에 연결되어 있거나
             if (y-1 >= 0 && map[x][y-1][0]) ||
-                (x+1 <= n && y-1 >= 0 && map[x+1][y-1][0]) ||
-                (x-1 >= 0 && x+1 <= n && map[x-1][y][1] && map[x+1][y][1]) {
+            (x+1 <= n && y-1 >= 0 && map[x+1][y-1][0]) ||
+            (x-1 >= 0 && x+1 <= n && map[x-1][y][1] && map[x+1][y][1]) {
                 return true
             } else {
                 return false
@@ -59,14 +54,13 @@ func solution(_ n:Int, _ build_frame:[[Int]]) -> [[Int]] {
     
     for build in build_frame {
         let (x, y, a, b) = (build[0], build[1], build[2], build[3])
+        
         if b == 0 {
-            // 삭제
             map[x][y][a] = false
             if !canDelete(x, y) {
                 map[x][y][a] = true
             }
         } else {
-            // 설치
             if canBuild(x, y, a) {
                 map[x][y][a] = true
             }
