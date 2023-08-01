@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		24AC403E2A7654CD007C25EB /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC403D2A7654CD007C25EB /* main.swift */; };
+		24AC403F2A7656A2007C25EB /* 블록 이동하기.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC40342A764C14007C25EB /* 블록 이동하기.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -362,7 +362,6 @@
 		24AC40362A764D54007C25EB /* 1759.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 1759.swift; sourceTree = "<group>"; };
 		24AC40392A765057007C25EB /* 10819.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 10819.swift; sourceTree = "<group>"; };
 		24AC403B2A7653A3007C25EB /* 10974.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 10974.swift; sourceTree = "<group>"; };
-		24AC403D2A7654CD007C25EB /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		24DD15002A0A64B300AA1845 /* Algorithm */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Algorithm; sourceTree = BUILT_PRODUCTS_DIR; };
 		24DD15032A0A64B300AA1845 /* 7662.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 7662.swift; sourceTree = "<group>"; };
 		24DD15192A0A687900AA1845 /* 소수 찾기.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "소수 찾기.swift"; sourceTree = "<group>"; };
@@ -922,7 +921,6 @@
 				24AC40362A764D54007C25EB /* 1759.swift */,
 				24AC40392A765057007C25EB /* 10819.swift */,
 				24AC403B2A7653A3007C25EB /* 10974.swift */,
-				24AC403D2A7654CD007C25EB /* main.swift */,
 			);
 			path = 23_07;
 			sourceTree = "<group>";
@@ -1186,7 +1184,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24AC403E2A7654CD007C25EB /* main.swift in Sources */,
+				24AC403F2A7656A2007C25EB /* 블록 이동하기.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
