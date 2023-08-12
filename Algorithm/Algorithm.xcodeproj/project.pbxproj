@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		24AC40CF2A82180C007C25EB /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC40CE2A82180C007C25EB /* main.swift */; };
+		24AC40D12A878154007C25EB /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC40D02A878154007C25EB /* main.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -368,7 +368,8 @@
 		24AC40C62A809DF9007C25EB /* 합승 택시 요금.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "합승 택시 요금.swift"; sourceTree = "<group>"; };
 		24AC40C82A80C211007C25EB /* 5972.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 5972.swift; sourceTree = "<group>"; };
 		24AC40CC2A81EE84007C25EB /* 광고 삽입.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "광고 삽입.swift"; sourceTree = "<group>"; };
-		24AC40CE2A82180C007C25EB /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		24AC40CE2A82180C007C25EB /* 카드 짝 맞추기.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "카드 짝 맞추기.swift"; sourceTree = "<group>"; };
+		24AC40D02A878154007C25EB /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		24DD15002A0A64B300AA1845 /* Algorithm */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Algorithm; sourceTree = BUILT_PRODUCTS_DIR; };
 		24DD15032A0A64B300AA1845 /* 7662.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 7662.swift; sourceTree = "<group>"; };
 		24DD15192A0A687900AA1845 /* 소수 찾기.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "소수 찾기.swift"; sourceTree = "<group>"; };
@@ -941,7 +942,8 @@
 				24AC40602A7F5441007C25EB /* 순위 검색.swift */,
 				24AC40C62A809DF9007C25EB /* 합승 택시 요금.swift */,
 				24AC40CC2A81EE84007C25EB /* 광고 삽입.swift */,
-				24AC40CE2A82180C007C25EB /* main.swift */,
+				24AC40CE2A82180C007C25EB /* 카드 짝 맞추기.swift */,
+				24AC40D02A878154007C25EB /* main.swift */,
 			);
 			path = "2021 KAKAO BLIND RECRUITMENT";
 			sourceTree = "<group>";
@@ -1214,7 +1216,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24AC40CF2A82180C007C25EB /* main.swift in Sources */,
+				24AC40D12A878154007C25EB /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
