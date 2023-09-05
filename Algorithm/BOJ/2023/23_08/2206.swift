@@ -21,11 +21,10 @@ for _ in 0..<n {
 let dx = [0,0,1,-1]
 let dy = [1,-1,0,0]
 
-var dist = [[[Int]]](repeating: [[Int]](repeating: [Int](repeating: -1, count: 2), count: m), count: n)
-dist[0][0][0] = 1
+var visited = [[[Int]]](repeating: [[Int]](repeating: [Int](repeating: -1, count: 2), count: m), count: n)
+visited[0][0][0] = 1
 
-var queue = [(Int, Int, Int)]()
-queue.append((0, 0, 0))
+var queue = [(0, 0, 0)]
 var idx = 0
 
 var ans = -1
@@ -33,9 +32,9 @@ while idx < queue.count {
     let (x, y, wall) = queue[idx]
     idx += 1
     
-    // 조기 탈출
-    if (x, y) == (n-1, m-1) {
-        ans = dist[x][y][wall]
+    // 종료 조건
+    if (x,y) == (n-1, m-1) {
+        ans = visited[x][y][wall]
         break
     }
     
@@ -43,13 +42,13 @@ while idx < queue.count {
         let nx = x + dx[i]
         let ny = y + dy[i]
         
-        if 0 <= nx, nx < n, 0 <= ny, ny < m {
-            let nextWall = graph[nx][ny] == 0 ? wall : wall + 1
-            
-            if nextWall <= 1 && dist[nx][ny][nextWall] == -1 {
-                dist[nx][ny][nextWall] = dist[x][y][wall] + 1
-                queue.append((nx, ny, nextWall))
-            }
+        if nx < 0 || nx >= n || ny < 0 || ny >= m { continue }
+        
+        let newWall = graph[nx][ny] == 0 ? wall : wall + 1
+        
+        if newWall <= 1 && visited[nx][ny][newWall] == -1 {
+            visited[nx][ny][newWall] = visited[x][y][wall] + 1
+            queue.append((nx, ny, newWall))
         }
     }
 }
