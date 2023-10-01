@@ -37,6 +37,12 @@ while start < end {
             end -= 1
         }
     }
+    
+//    if arr[start] + arr[end] > 0 {
+//        end -= 1
+//    } else {
+//        start += 1
+//    }
 }
 
 print(ans[0], ans[1])
