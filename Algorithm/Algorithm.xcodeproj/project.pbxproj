@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		245212762AE52961009607ED /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245212752AE5295A009607ED /* main.swift */; };
+		245212782AE547EB009607ED /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245212772AE547EB009607ED /* main.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -168,7 +168,8 @@
 		2452126F2AE4F554009607ED /* 숫자 게임.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "숫자 게임.swift"; sourceTree = "<group>"; };
 		245212712AE51B3C009607ED /* 스킬트리.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "스킬트리.swift"; sourceTree = "<group>"; };
 		245212732AE51E21009607ED /* 방문 길이.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "방문 길이.swift"; sourceTree = "<group>"; };
-		245212752AE5295A009607ED /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		245212752AE5295A009607ED /* 쿠키 구입.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "쿠키 구입.swift"; sourceTree = "<group>"; };
+		245212772AE547EB009607ED /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		245445462A2DB9CC009C225E /* 18427.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 18427.swift; sourceTree = "<group>"; };
 		245445482A2EE442009C225E /* 18429.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 18429.swift; sourceTree = "<group>"; };
 		2454454C2A2EE4AD009C225E /* 2696.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 2696.swift; sourceTree = "<group>"; };
@@ -662,7 +663,7 @@
 		245212602AE3E5D9009607ED /* Summer Winter Coding(~2018) */ = {
 			isa = PBXGroup;
 			children = (
-				245212752AE5295A009607ED /* main.swift */,
+				245212752AE5295A009607ED /* 쿠키 구입.swift */,
 				245212732AE51E21009607ED /* 방문 길이.swift */,
 				245212712AE51B3C009607ED /* 스킬트리.swift */,
 				2452126F2AE4F554009607ED /* 숫자 게임.swift */,
@@ -1196,6 +1197,7 @@
 				24AC40E32A8DF5F7007C25EB /* 2022 KAKAO TECH INTERNSHIP */,
 				24AC40EE2A948E4A007C25EB /* 2023 KAKAO BLIND RECRUITMENT */,
 				245212602AE3E5D9009607ED /* Summer Winter Coding(~2018) */,
+				245212772AE547EB009607ED /* main.swift */,
 			);
 			path = Programmers;
 			sourceTree = "<group>";
@@ -1406,7 +1408,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				245212762AE52961009607ED /* main.swift in Sources */,
+				245212782AE547EB009607ED /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
