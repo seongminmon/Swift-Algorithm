@@ -39,15 +39,10 @@ for _ in 0..<n {
 
 result.sort {
     if $0.count == $1.count {
-        let str1 = $0.map { String($0) }
-        let str2 = $1.map { String($0) }
-        for i in 0..<str1.count {
-            if str1[i] != str2[i] {
-                return str1[i] < str2[i]
-            }
-        }
+        return $0 < $1
+    } else {
+        return $0.count < $1.count
     }
-    return $0.count < $1.count
 }
 
 print(result.joined(separator: "\n"))
