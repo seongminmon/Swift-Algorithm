@@ -9,21 +9,20 @@
 
 import Foundation
 
-let n = Int(readLine()!)!
-var ans = [0]
-
-for i in 666 ... 2666799 {
-    var temp = i
-    while temp >= 666 {
-        if temp % 1000 == 666 {
-            ans.append(i)
+var n = Int(readLine()!)!
+var num = 665
+while n > 0 {
+    num += 1
+    
+    var cnt = 0
+    for s in String(num) {
+        cnt = s == "6" ? cnt+1 : 0
+        
+        if cnt == 3 {
+            n -= 1
             break
         }
-        temp /= 10
     }
 }
 
-print(ans[n])
-
-
-
+print(num)

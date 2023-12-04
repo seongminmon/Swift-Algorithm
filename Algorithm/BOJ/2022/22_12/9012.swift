@@ -9,25 +9,26 @@
 
 import Foundation
 
-let n = Int(readLine()!)!
-
-var result = ""
-for _ in 0 ..< n {
-    let str = readLine()!
-    
-    var cnt = 0
-    for s in str {
-        if s == "(" {
-            cnt += 1
+let t = Int(readLine()!)!
+for _ in 0..<t {
+    let input = readLine()!.map { String($0) }
+    var stack = [String]()
+    for i in input {
+        if i == "(" {
+            stack.append(i)
         } else {
-            cnt -= 1
-            if cnt < 0 {
+            if let last = stack.last, last == "(" {
+                stack.removeLast()
+            } else {
+                stack.append(i)
                 break
             }
         }
     }
     
-    result += cnt == 0 ? "YES\n" : "NO\n"
+    if stack.isEmpty {
+        print("YES")
+    } else {
+        print("NO")
+    }
 }
-
-print(result)
