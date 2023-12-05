@@ -9,58 +9,56 @@
 
 import Foundation
 
-// 입력
-let nm = readLine()!.split(separator: " ").map {Int(String($0))!}
+let nm = readLine()!.split(separator: " ").map { Int(String($0))! }
 let (n,m) = (nm[0], nm[1])
 
-var arr = [[Int]]()
-for _ in 0 ..< n {
-    let input =  readLine()!.split(separator: " ").map {Int(String($0))!}
-    arr.append(input)
+var graph = [[Int]]()
+for _ in 0..<n {
+    let input = readLine()!.split(separator: " ").map { Int(String($0))! }
+    graph.append(input)
 }
 
-// 풀이
-var safeZone = [(Int,Int)]()
-var virusZone = [(Int,Int)]()
-for i in 0 ..< n {
-    for j in 0 ..< m {
-        if arr[i][j] == 0 {
-            safeZone.append((i,j))
-        }
-        if arr[i][j] == 2 {
-            virusZone.append((i,j))
+var emptyPlace = [(Int,Int)]()
+var virus = [(Int,Int)]()
+for i in 0..<n {
+    for j in 0..<m {
+        if graph[i][j] == 0 {
+            emptyPlace.append((i,j))
+        } else if graph[i][j] == 2 {
+            virus.append((i,j))
         }
     }
 }
 
-func infection(_ arr: [[Int]]) -> [[Int]] {
-    var tempArr = arr
-    var queue = virusZone
-    
-    let dx = [0, 0, 1, -1]
-    let dy = [1, -1, 0, 0]
-    while !queue.isEmpty {
-        let (x,y) = queue.removeFirst()
-        for i in 0 ..< 4 {
-            let tempX = x + dx[i]
-            let tempY = y + dy[i]
-            if tempX >= 0 && tempX < n && tempY >= 0 && tempY < m {
-                if tempArr[tempX][tempY] == 0 {
-                    tempArr[tempX][tempY] = 2
-                    queue.append((tempX,tempY))
-                }
+let dx = [0,0,1,-1]
+let dy = [1,-1,0,0]
+
+var originalVisited = [[Bool]](repeating: [Bool](repeating: false, count: m), count: n)
+for (x,y) in virus { originalVisited[x][y] = true }
+
+func bfs() -> Int {
+    var queue = virus
+    var idx = 0
+    while idx < queue.count {
+        let (x,y) = queue[idx]
+        idx += 1
+        
+        for i in 0..<4 {
+            let nx = x + dx[i]
+            let ny = y + dy[i]
+            
+            if 0 <= nx, nx < n, 0 <= ny, ny < m,
+               !visited[nx][ny], graph[nx][ny] == 0 {
+                visited[nx][ny] = true
+                queue.append((nx,ny))
             }
         }
     }
     
-    return tempArr
-}
-
-func countZero(_ arr: [[Int]]) -> Int {
     var cnt = 0
-    for i in 0 ..< n {
-        for j in 0 ..< m {
-            if arr[i][j] == 0 {
+    for i in 0..<n {
+        for j in 0..<m {
+            if !visited[i][j] && graph[i][j] != 1 {
                 cnt += 1
             }
         }
@@ -68,26 +66,30 @@ func countZero(_ arr: [[Int]]) -> Int {
     return cnt
 }
 
-var result = 0
-for k in 0 ..< safeZone.count {
-    for i in k+1 ..< safeZone.count {
-        for j in i+1 ..< safeZone.count {
-            var tempArr = arr
-            let wall1 = safeZone[k]
-            let wall2 = safeZone[i]
-            let wall3 = safeZone[j]
-            tempArr[wall1.0][wall1.1] = 1
-            tempArr[wall2.0][wall2.1] = 1
-            tempArr[wall3.0][wall3.1] = 1
+var ans = 0
+var visited = originalVisited
+
+// 벽 세우기
+for i in 0..<emptyPlace.count {
+    for j in i+1..<emptyPlace.count {
+        for k in j+1..<emptyPlace.count {
+            let (x1,y1) = emptyPlace[i]
+            let (x2,y2) = emptyPlace[j]
+            let (x3,y3) = emptyPlace[k]
             
-            let inspectedArr = infection(tempArr)
-            let cnt = countZero(inspectedArr)
-            if result < cnt {
-                result = cnt
-            }
+            graph[x1][y1] = 1
+            graph[x2][y2] = 1
+            graph[x3][y3] = 1
+            
+            // 바이러스 퍼뜨리기 + 안전구역 세기
+            visited = originalVisited
+            ans = max(ans, bfs())
+            
+            graph[x1][y1] = 0
+            graph[x2][y2] = 0
+            graph[x3][y3] = 0
         }
     }
 }
 
-// 출력
-print(result)
+print(ans)

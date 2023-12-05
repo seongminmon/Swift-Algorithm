@@ -9,64 +9,60 @@
 
 import Foundation
 
-// 입력
 let nm = readLine()!.split(separator: " ").map { Int(String($0))! }
-let n = nm[0]
-let m = nm[1]
+let (n,m) = (nm[0], nm[1])
+
 var graph = [[Int]]()
-for _ in 0 ..< n {
-    let input = readLine()!.split(separator: " ").map{ Int(String($0))! }
+for _ in 0..<n {
+    let input = readLine()!.split(separator: " ").map { Int(String($0))! }
     graph.append(input)
 }
 
-// 풀이
-let dx = [-1, 1, 0, 0]
-let dy = [0, 0, -1, 1]
+let dx = [0,0,1,-1]
+let dy = [1,-1,0,0]
 
 func bfs() -> Int {
     var visited = [[Bool]](repeating: [Bool](repeating: false, count: m), count: n)
-    var queue = [(Int,Int)]()
+    visited[0][0] = true
+    var queue = [(0,0)]
     var idx = 0
     
-    queue.append((0,0))
-    visited[0][0] = true
-    
-    var cnt = 0
+    var cheese = [(Int,Int)]()
     while idx < queue.count {
         let (x,y) = queue[idx]
         idx += 1
         
-        for i in 0 ..< 4 {
+        for i in 0..<4 {
             let nx = x + dx[i]
             let ny = y + dy[i]
             
-            if 0 <= nx, nx < n, 0 <= ny, ny < m,
-            !visited[nx][ny] {
-                visited[nx][ny] = true
+            if 0 <= nx, nx < n, 0 <= ny, ny < m, !visited[nx][ny] {
                 if graph[nx][ny] == 0 {
                     queue.append((nx,ny))
-                } else if graph[nx][ny] == 1 {
-                    // 치즈 삭제
-                    graph[nx][ny] = 0
-                    cnt += 1
+                } else {
+                    cheese.append((nx,ny))
                 }
+                visited[nx][ny] = true
             }
         }
     }
     
-    return cnt
+    for (x,y) in cheese {
+        graph[x][y] = 0
+    }
+    
+    return cheese.count
 }
 
-// 출력
-var result = 0
-var cnt = 0
+var time = 0
+var prev = 0
 while true {
-    let ncnt = bfs()
-    if ncnt == 0 {
+    let cnt = bfs()
+    if cnt == 0 {
         break
     }
-    result += 1
-    cnt = ncnt
+    prev = cnt
+    time += 1
 }
-print(result)
-print(cnt)
+print(time)
+print(prev)

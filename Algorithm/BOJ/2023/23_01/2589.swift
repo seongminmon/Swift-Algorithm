@@ -9,56 +9,52 @@
 
 import Foundation
 
-let nm = readLine()!.split(separator: " ").map{ Int(String($0))! }
+let nm = readLine()!.split(separator: " ").map { Int(String($0))! }
 let (n,m) = (nm[0], nm[1])
 
-var board = [[String]]()
-for _ in 0 ..< n {
-    let input = readLine()!.map{ String($0) }
-    board.append(input)
+var graph = [[String]]()
+for _ in 0..<n {
+    let input = readLine()!.map { String($0) }
+    graph.append(input)
 }
 
-let dx = [0,0,1,-1]
-let dy = [1,-1,0,0]
-
 func bfs(_ sx: Int, _ sy: Int) -> Int {
-    var visited = [[Int]](repeating: [Int](repeating: -1, count: m), count: n)
-    var queue = [(Int,Int)]()
+    let dx = [0,0,1,-1]
+    let dy = [1,-1,0,0]
+    
+    var visited = [[Int]](repeating: [Int](repeating: Int.max, count: m), count: n)
+    visited[sx][sy] = 0
+    var queue = [(sx,sy)]
     var idx = 0
     
-    queue.append((sx,sy))
-    visited[sx][sy] = 0
-    
-    var maxDist = 0
+    var ret = 0
     while idx < queue.count {
         let (x,y) = queue[idx]
         idx += 1
         
-        for i in 0 ..< 4 {
+        for i in 0..<4 {
             let nx = x + dx[i]
             let ny = y + dy[i]
             
-            // 범위 내, 미방문, 육지
             if 0 <= nx, nx < n, 0 <= ny, ny < m,
-            visited[nx][ny] == -1, board[nx][ny] == "L" {
-                queue.append((nx,ny))
+               visited[nx][ny] > visited[x][y] + 1,
+               graph[nx][ny] == "L" {
                 visited[nx][ny] = visited[x][y] + 1
-                maxDist = max(maxDist, visited[nx][ny])
+                queue.append((nx,ny))
+                ret = max(ret, visited[nx][ny])
             }
         }
     }
     
-    return maxDist
+    return ret
 }
 
-var result = 0
-for i in 0 ..< n {
-    for j in 0 ..< m {
-        if board[i][j] == "L" {
-            let temp = bfs(i,j)
-            result = max(result, temp)
+var ans = 0
+for i in 0..<n {
+    for j in 0..<m {
+        if graph[i][j] == "L" {
+            ans = max(ans, bfs(i, j))
         }
     }
 }
-
-print(result)
+print(ans)

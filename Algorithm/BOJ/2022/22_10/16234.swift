@@ -9,38 +9,34 @@
 
 import Foundation
 
-// 입력
 let nlr = readLine()!.split(separator: " ").map { Int(String($0))! }
 let (n,l,r) = (nlr[0], nlr[1], nlr[2])
-var graph = [[Int]](repeating: [], count: n)
-for i in 0 ..< n {
+
+var graph = [[Int]]()
+for _ in 0..<n {
     let input = readLine()!.split(separator: " ").map { Int(String($0))! }
-    graph[i] = input
+    graph.append(input)
 }
 
-// 풀이
+var unions = [[(Int,Int)]]()
 var visited = [[Bool]](repeating: [Bool](repeating: false, count: n), count: n)
-var union = [[(Int,Int)]]()
-
-func bfs(x: Int, y: Int) {
+func bfs(_ sx: Int, _ sy: Int) -> [(Int,Int)] {
     let dx = [0,0,1,-1]
     let dy = [1,-1,0,0]
-    var queue = [(Int,Int)]()
+    
+    visited[sx][sy] = true
+    var queue = [(sx,sy)]
     var idx = 0
-    
-    queue.append((x,y))
-    visited[x][y] = true
-    
     while idx < queue.count {
-        let (curx, cury) = queue[idx]
+        let (x,y) = queue[idx]
         idx += 1
         
-        for i in 0 ..< 4 {
-            let nx = curx + dx[i]
-            let ny = cury + dy[i]
+        for i in 0..<4 {
+            let nx = x + dx[i]
+            let ny = y + dy[i]
             
             if 0 <= nx, nx < n, 0 <= ny, ny < n, !visited[nx][ny] {
-                let diff = abs(graph[curx][cury] - graph[nx][ny])
+                let diff = abs(graph[x][y] - graph[nx][ny])
                 if l <= diff, diff <= r {
                     visited[nx][ny] = true
                     queue.append((nx,ny))
@@ -49,45 +45,44 @@ func bfs(x: Int, y: Int) {
         }
     }
     
-    union.append(queue)
+    return queue
 }
 
-var result = 0
-while true {
-    visited = [[Bool]](repeating: [Bool](repeating: false, count: n), count: n)
-    union = [[(Int,Int)]]()
+func move(_ union: [(Int,Int)]) {
+    var sum = 0
+    for (x,y) in union {
+        sum += graph[x][y]
+    }
     
-    // 1. 연합 생성
-    for i in 0 ..< n {
-        for j in 0 ..< n {
+    let val = sum / union.count
+    for (x,y) in union {
+        graph[x][y] = val
+    }
+}
+
+var ans = 0
+while true {
+    unions = [[(Int,Int)]]()
+    visited = [[Bool]](repeating: [Bool](repeating: false, count: n), count: n)
+    
+    // 연합 찾기
+    for i in 0..<n {
+        for j in 0..<n {
             if !visited[i][j] {
-                bfs(x: i, y: j)
+                unions.append(bfs(i, j))
             }
         }
     }
     
-    // 종료 조건
-    if union.count == n*n {
+    // 인구이동
+    for union in unions {
+        move(union)
+    }
+    
+    if unions.count == n*n {
         break
     }
     
-    // 2. 인구 이동
-    for i in 0 ..< union.count {
-        if union[i].count == 1 {
-            continue
-        }
-        
-        var sum = 0
-        for (x,y) in union[i] {
-            sum += graph[x][y]
-        }
-        for (x,y) in union[i] {
-            graph[x][y] = sum / union[i].count
-        }
-    }
-    
-    result += 1
+    ans += 1
 }
-
-// 출력
-print(result)
+print(ans)

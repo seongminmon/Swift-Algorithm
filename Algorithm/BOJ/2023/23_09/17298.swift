@@ -12,20 +12,13 @@ import Foundation
 let n = Int(readLine()!)!
 let arr = readLine()!.split(separator: " ").map { Int(String($0))! }
 
+var ans = [Int](repeating: -1, count: n)
 var stack = [Int]()
-var ans = [Int]()
-for i in stride(from: n-1, through: 0, by: -1) {
-    while !stack.isEmpty && stack.last! <= arr[i] {
+for i in 0..<n {
+    while let last = stack.last, arr[last] < arr[i] {
+        ans[last] = arr[i]
         stack.removeLast()
     }
-    
-    if stack.isEmpty {
-        ans.append(-1)
-    } else {
-        ans.append(stack.last!)
-    }
-    
-    stack.append(arr[i])
+    stack.append(i)
 }
-
-print(ans.reversed().map { String($0) }.joined(separator: " "))
+print(ans.map { String($0) }.joined(separator: " "))

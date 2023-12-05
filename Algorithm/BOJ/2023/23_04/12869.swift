@@ -10,45 +10,37 @@
 import Foundation
 
 let n = Int(readLine()!)!
-let input = readLine()!.split(separator: " ").map{ Int(String($0))! }
-var scv = [0,0,0]
-for i in 0 ..< n { scv[i] = input[i] }
+var input = readLine()!.split(separator: " ").map { Int(String($0))! }
+while input.count < 3 { input.append(0) }
+let (sx,sy,sz) = (input[0], input[1], input[2])
 
-func bfs() -> Int {
-    var visited = [[[Int]]](repeating: [[Int]](repeating: [Int](repeating: Int.max, count: 61), count: 61), count: 61)
-    var queue = [(Int,Int,Int)]()
-    var idx = 0
+let dir = [[1,3,9],
+           [1,9,3],
+           [3,1,9],
+           [3,9,1],
+           [9,1,3],
+           [9,3,1]]
+
+var visited = [[[Int]]](repeating: [[Int]](repeating: [Int](repeating: -1, count: sz+1), count: sy+1), count: sx+1)
+visited[sx][sy][sz] = 0
+var queue = [(sx,sy,sz)]
+var idx = 0
+
+while idx < queue.count {
+    let (x,y,z) = queue[idx]
+    idx += 1
     
-    visited[scv[0]][scv[1]][scv[2]] = 0
-    queue.append((scv[0],scv[1],scv[2]))
+    if (x,y,z) == (0,0,0) { break }
     
-    let dscv = [[1,3,9],[1,9,3],[3,1,9],[3,9,1],[9,1,3],[9,3,1]]
-    
-    while idx < queue.count {
-        let (now1, now2, now3) = queue[idx]
-        idx += 1
+    for d in dir {
+        let nx = max(x - d[0], 0)
+        let ny = max(y - d[1], 0)
+        let nz = max(z - d[2], 0)
         
-        if now1 == 0, now2 == 0, now3 == 0 {
-            break
-        }
-        
-        for i in 0 ..< 6 {
-            var next1 = now1 - dscv[i][0]
-            var next2 = now2 - dscv[i][1]
-            var next3 = now3 - dscv[i][2]
-            
-            if next1 < 0 { next1 = 0 }
-            if next2 < 0 { next2 = 0 }
-            if next3 < 0 { next3 = 0 }
-            
-            if visited[next1][next2][next3] == Int.max {
-                visited[next1][next2][next3] = visited[now1][now2][now3] + 1
-                queue.append((next1, next2, next3))
-            }
+        if visited[nx][ny][nz] == -1 {
+            visited[nx][ny][nz] = visited[x][y][z] + 1
+            queue.append((nx,ny,nz))
         }
     }
-    
-    return visited[0][0][0]
 }
-
-print(bfs())
+print(visited[0][0][0])

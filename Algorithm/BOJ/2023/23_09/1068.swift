@@ -10,41 +10,35 @@
 import Foundation
 
 let n = Int(readLine()!)!
-var parent = readLine()!.split(separator: " ").map { Int(String($0))! }
+let parent = readLine()!.split(separator: " ").map { Int(String($0))! }
 let target = Int(readLine()!)!
 
-var graph = [[Int]](repeating: [], count: n)
 var root = -1
+var graph = [[Int]](repeating: [], count: n)
 for i in 0..<n {
-    if parent[i] != -1 {
-        graph[parent[i]].append(i)
-    } else {
+    if parent[i] == -1 {
         root = i
+    } else {
+        graph[parent[i]].append(i)
     }
 }
 
-var leafCnt = 0
-func solve(_ node: Int) {
-    if node == target {
-        return
-    }
+// 리프노드의 개수 리턴
+func dfs(_ now: Int) -> Int {
+    // 지울 노드일 때
+    if now == target { return 0 }
     
-    // 종료 조건
-    if graph[node].isEmpty {
-        leafCnt += 1
-        return
-    }
+    // 자식 노드가 없을 때
+    if graph[now].isEmpty { return 1 }
     
-    if graph[node] == [target] {
-        leafCnt += 1
-        return
-    }
+    // 노드의 자식이 target뿐이라면 리프노드가 됨
+    if graph[now] == [target] { return 1 }
     
-    for next in graph[node] {
-        solve(next)
+    var ret = 0
+    for next in graph[now] {
+        ret += dfs(next)
     }
+    return ret
 }
 
-solve(root)
-
-print(leafCnt)
+print(dfs(root))
