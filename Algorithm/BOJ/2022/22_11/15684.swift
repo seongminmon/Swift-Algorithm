@@ -9,84 +9,56 @@
 
 import Foundation
 
-// 입력
-let nmh = readLine()!.split(separator: " ").map{ Int(String($0))! }
+let nmh = readLine()!.split(separator: " ").map { Int(String($0))! }
 let (n,m,h) = (nmh[0], nmh[1], nmh[2])
-var garo = [(Int,Int)]()
-for _ in 0 ..< m {
-    let ab = readLine()!.split(separator: " ").map{ Int(String($0))! }
-    garo.append((ab[0] - 1, ab[1] - 1))
+
+var visited = [[Bool]](repeating: [Bool](repeating: false, count: n), count: h)
+for _ in 0..<m {
+    let ab = readLine()!.split(separator: " ").map { Int(String($0))! - 1 }
+    let (a,b) = (ab[0], ab[1])
+    visited[a][b] = true
 }
 
-// 풀이
-var visited = [[Bool]](repeating: [Bool](repeating: false, count: n-1), count: h)
-for (height, num) in garo {
-    visited[height][num] = true
+func check() -> Bool {
+    for i in 0..<n {
+        var now = i
+        for j in 0..<h {
+            if 0 <= now, now < n, visited[j][now] {
+                now += 1
+            } else if 0 <= now-1, now-1 < n, visited[j][now-1] {
+                now -= 1
+            }
+        }
+        
+        if i != now {
+            return false
+        }
+    }
+    return true
 }
 
-func dfs(_ depth: Int, _ start: Int) {
-    // 종료 조건
-    if depth == 1 {
+var ans = -1
+func solve(_ depth: Int, _ start: Int, _ target: Int) {
+    if depth == target {
         if check() {
-            result.append(1)
-        }
-    } else if depth == 2 {
-        if check() {
-            result.append(2)
-        }
-    } else if depth == 3 {
-        if check() {
-            result.append(3)
+            ans = target
         }
         return
     }
     
-    for i in start ..< h {
-        for j in 0 ..< n-1 {
+    for i in start..<h {
+        for j in 0..<n-1 {
             if !visited[i][j] {
                 visited[i][j] = true
-                dfs(depth+1, i)
+                solve(depth+1, i, target)
                 visited[i][j] = false
             }
         }
     }
 }
 
-func check() -> Bool {
-    var check = true
-    
-    for i in 0 ..< n {
-        var result = i
-        
-        for j in 0 ..< h {
-            // 오른쪽 이동
-            if result < n-1, visited[j][result] {
-                result += 1
-            }
-            // 왼쪽 이동
-            else if 0 < result, visited[j][result-1] {
-                result -= 1
-            }
-        }
-        
-        if result != i {
-            check = false
-            break
-        }
-    }
-    return check
+for i in 0...3 {
+    solve(0, 0, i)
+    if ans != -1 { break }
 }
-
-var result = [Int]()
-if check() {
-    result.append(0)
-} else {
-    dfs(0,0)
-}
-
-// 출력
-if result.isEmpty {
-    print(-1)
-} else {
-    print(result.min()!)
-}
+print(ans)

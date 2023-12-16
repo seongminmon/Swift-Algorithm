@@ -9,64 +9,59 @@
 
 import Foundation
 
-// 입력
 let n = Int(readLine()!)!
-var board = [[Int]]()
-for _ in 0 ..< n {
-    let input = readLine()!.split(separator: " ").map{ Int(String($0))! }
-    board.append(input)
+var graph = [[Int]]()
+for _ in 0..<n {
+    let input = readLine()!.split(separator: " ").map { Int(String($0))! }
+    graph.append(input)
 }
 
-// 풀이
 let dx = [0,0,0,1,-1]
 let dy = [0,1,-1,0,0]
 
+var ans = Int.max
 var visited = [[Bool]](repeating: [Bool](repeating: false, count: n), count: n)
-var result = Int(1e9)
-func dfs(_ depth: Int, _ select: [(Int,Int)]) {
-    // 종료 조건
+func dfs(_ depth: Int, _ start: Int, _ value: Int) {
     if depth == 3 {
-        var sum = 0
-        for (i,j) in select {
-            for k in 0 ..< 5 {
-                let ni = i + dx[k]
-                let nj = j + dy[k]
-                sum += board[ni][nj]
-            }
-        }
-        
-        result = min(result, sum)
+        ans = min(ans, value)
         return
     }
     
-    for i in 1 ..< n-1 {
-        for j in 1 ..< n-1 {
-            var visit = false
-            for k in 0 ..< 5 {
-                let ni = i + dx[k]
-                let nj = j + dy[k]
+    for i in start..<n {
+        for j in 0..<n {
+            var flag = true
+            for d in 0..<5 {
+                let ni = i + dx[d]
+                let nj = j + dy[d]
                 
-                if visited[ni][nj] {
-                    visit = true
+                if ni < 0 || ni >= n || nj < 0 || nj >= n || visited[ni][nj] {
+                    flag = false
                     break
                 }
             }
-            if !visit {
-                for k in 0 ..< 5 {
-                    let ni = i + dx[k]
-                    let nj = j + dy[k]
-                    visited[ni][nj] = true
-                }
-                dfs(depth+1, select + [(i,j)])
-                for k in 0 ..< 5 {
-                    let ni = i + dx[k]
-                    let nj = j + dy[k]
-                    visited[ni][nj] = false
-                }
+            
+            if !flag { continue }
+            
+            var value = value
+            for d in 0..<5 {
+                let ni = i + dx[d]
+                let nj = j + dy[d]
+                visited[ni][nj] = true
+                value += graph[ni][nj]
+            }
+            
+            dfs(depth+1, i, value)
+            
+            for d in 0..<5 {
+                let ni = i + dx[d]
+                let nj = j + dy[d]
+                visited[ni][nj] = false
+                value -= graph[ni][nj]
             }
         }
     }
 }
 
-dfs(0, [])
-print(result)
+dfs(0, 0, 0)
+
+print(ans)
