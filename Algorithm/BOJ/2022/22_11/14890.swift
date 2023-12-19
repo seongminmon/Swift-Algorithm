@@ -9,73 +9,93 @@
 
 import Foundation
 
-// 입력
-let nl = readLine()!.split(separator: " ").map{ Int(String($0))! }
+let nl = readLine()!.split(separator: " ").map { Int(String($0))! }
 let (n,l) = (nl[0], nl[1])
-var graph = [[Int]]()
-for _ in 0 ..< n {
-    let input = readLine()!.split(separator: " ").map{ Int(String($0))! }
-    graph.append(input)
-}
 
-// 풀이
-var result = 0
-for i in 0 ..< n {
-    // 행 (n개) 체크
-    if checkRoad(graph[i]) {
-        result += 1
-    }
-    
-    // 열 (n개) 체크
-    var tempRoad = [Int]()
-    for j in 0 ..< n {
-        tempRoad.append(graph[j][i])
-    }
-    if checkRoad(tempRoad) {
-        result += 1
+var garo = [[Int]]()
+var sero = [[Int]](repeating: [Int](repeating: 0, count: n), count: n)
+for i in 0..<n {
+    let input = readLine()!.split(separator: " ").map { Int(String($0))! }
+    garo.append(input)
+    for j in 0..<n {
+        sero[j][i] = input[j]
     }
 }
 
-func checkRoad(_ road: [Int]) -> Bool {
+var ans = 0
+func isPossible(_ arr: [Int]) -> Bool {
     var visited = [Bool](repeating: false, count: n)
-    
-    for i in 0 ..< n - 1 {
-        if abs(road[i] - road[i+1]) > 1 {
+    var cnt = 1
+    for i in 1..<n {
+        if abs(arr[i-1] - arr[i]) > 1 {
             return false
         }
         
-        if road[i] < road[i+1] {
-            // '/' 모양 경사로 설치
-            if i - l + 1 >= 0 {
-                for j in stride(from: i, through: i - l + 1, by: -1) {
-                    if road[i] != road[j] || visited[j] {
-                        return false
-                    } else {
-                        visited[j] = true
-                    }
-                }
-            } else {
+        // 높이차가 2 이상나면 불가능
+        if arr[i-1] == arr[i] {
+            cnt += 1
+        } else if arr[i-1] < arr[i] {
+            // 평지가 부족하면 불가능
+            if cnt < l {
                 return false
             }
-        } else if road[i] > road[i+1] {
-            // '\' 모양 경사로 설치
-            if i + l < n {
-                for j in i + 1 ... i + l {
-                    if road[i+1] != road[j] || visited[j] {
-                        return false
-                    } else {
-                        visited[j] = true
-                    }
+            
+            // 오르막 경사로 설치
+            for j in (i-l)..<i {
+                // 이미 설치되어있다면 불가능
+                if visited[j] {
+                    return false
                 }
-            } else {
-                return false
+                visited[j] = true
             }
+            
+            // 카운트 초기화
+            cnt = 1
+        }
+    }
+    
+    cnt = 1
+    for i in stride(from: n-2, through: 0, by: -1) {
+        // 높이차가 2 이상나면 불가능
+        if abs(arr[i] - arr[i+1]) > 1 {
+            return false
         }
         
+        if arr[i] == arr[i+1] {
+            cnt += 1
+        } else if arr[i] > arr[i+1] {
+            // 평지가 부족하면 불가능
+            if cnt < l {
+                return false
+            }
+            
+            // 오르막 경사로 설치
+            for j in (i+1)...(i+l) {
+                // 이미 설치되어있다면 불가능
+                if visited[j] {
+                    return false
+                }
+                visited[j] = true
+            }
+            
+            // 카운트 초기화
+            cnt = 1
+        }
     }
     
     return true
 }
 
-// 출력
-print(result)
+for i in garo {
+    if isPossible(i) {
+        ans += 1
+    }
+}
+
+for j in sero {
+    if isPossible(j) {
+        ans += 1
+    }
+}
+
+print(ans)
