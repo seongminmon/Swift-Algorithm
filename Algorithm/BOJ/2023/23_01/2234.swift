@@ -9,75 +9,70 @@
 
 import Foundation
 
-let mn = readLine()!.split(separator: " ").map{ Int(String($0))! }
+let mn = readLine()!.split(separator: " ").map { Int(String($0))! }
 let (m,n) = (mn[0], mn[1])
 
 var graph = [[Int]]()
-for _ in 0 ..< n {
-    let input = readLine()!.split(separator: " ").map{ Int(String($0))! }
+for _ in 0..<n {
+    let input = readLine()!.split(separator: " ").map { Int(String($0))! }
     graph.append(input)
 }
 
-let dx = [0, -1, 0, 1]
-let dy = [-1, 0, 1, 0]
+// [서,북,동,남]
+let dx = [0,-1,0,1]
+let dy = [-1,0,1,0]
 
-var visited = [[Bool]](repeating: [Bool](repeating: false, count: m), count: n)
-
-func bfs(_ sx: Int, _ sy: Int) -> Int {
+var visited = [[Int]](repeating: [Int](repeating: 0, count: m), count: n)
+func bfs(_ sx: Int, _ sy: Int, _ cnt: Int) -> Int {
+    visited[sx][sy] = cnt
     var queue = [(sx,sy)]
     var idx = 0
-    visited[sx][sy] = true
-    
     while idx < queue.count {
         let (x,y) = queue[idx]
         idx += 1
         
-        var wall = 1
-        for i in 0 ..< 4 {
-            if graph[x][y] & wall != wall {
-                let nx = x + dx[i]
-                let ny = y + dy[i]
-                
-                if 0 <= nx, nx < n, 0 <= ny, ny < m,
-                !visited[nx][ny] {
-                    visited[nx][ny] = true
-                    queue.append((nx,ny))
-                }
-            }
-            wall *= 2
+        for i in 0..<4 {
+            let nx = x + dx[i]
+            let ny = y + dy[i]
+            
+            if 0 > nx || nx >= n || 0 > ny || ny >= m ||
+                visited[nx][ny] != 0 || graph[x][y] & (1 << i) != 0 { continue }
+            
+            visited[nx][ny] = cnt
+            queue.append((nx,ny))
         }
     }
-    
     return queue.count
 }
 
 var roomCnt = 0
-var maxSize = 0
-for i in 0 ..< n {
-    for j in 0 ..< m {
-        if !visited[i][j] {
-            maxSize = max(maxSize, bfs(i, j))
+var maxRoomSize = 0
+var groupCnt = [0]
+for i in 0..<n {
+    for j in 0..<m {
+        if visited[i][j] == 0 {
             roomCnt += 1
+            let cnt = bfs(i, j, roomCnt)
+            maxRoomSize = max(maxRoomSize, cnt)
+            groupCnt.append(cnt)
         }
     }
 }
-
-var twoRoomMaxSize = 0
-for i in 0 ..< n {
-    for j in 0 ..< m {
-        var wall = 1
-        while wall <= 8 {
-            if graph[i][j] & wall == wall {
-                visited = [[Bool]](repeating: [Bool](repeating: false, count: m), count: n)
-                graph[i][j] = graph[i][j] - wall
-                twoRoomMaxSize = max(twoRoomMaxSize, bfs(i,j))
-                graph[i][j] = graph[i][j] + wall
-            }
-            wall *= 2
-        }
-    }
-}
-
 print(roomCnt)
-print(maxSize)
-print(twoRoomMaxSize)
+print(maxRoomSize)
+
+maxRoomSize = 0
+for i in 0..<n {
+    for j in 0..<m {
+        for d in 0..<4 {
+            let nx = i + dx[d]
+            let ny = j + dy[d]
+            
+            if 0 > nx || nx >= n || 0 > ny || ny >= m ||
+                visited[i][j] == visited[nx][ny] || graph[i][j] & (1 << d) == 0 { continue }
+            
+            maxRoomSize = max(maxRoomSize, groupCnt[visited[i][j]] + groupCnt[visited[nx][ny]])
+        }
+    }
+}
+print(maxRoomSize)

@@ -9,13 +9,12 @@
 
 import Foundation
 
-let x = Int(readLine()!)!
-let bitmask = String(x, radix: 2)
-
-var ans = 0
-for i in bitmask {
-    if i == "1" {
-        ans += 1
+var x = Int(readLine()!)!
+var cnt = 0
+while x > 0 {
+    if x % 2 != 0 {
+        cnt += 1
     }
+    x /= 2
 }
-print(ans)
+print(cnt)
