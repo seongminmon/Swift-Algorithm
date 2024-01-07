@@ -646,8 +646,6 @@
 				2482E3682B2EA7D600016E43 /* 1094.swift */,
 				2477330C2B3BE9BC0049A64A /* 14391.swift */,
 				2477330E2B3BFEEB0049A64A /* 13244.swift */,
-				247733752B4254DE0049A64A /* 14405.swift */,
-				247733772B426BEA0049A64A /* main.swift */,
 			);
 			path = 23_12;
 			sourceTree = "<group>";
@@ -1170,6 +1168,23 @@
 			path = 23_11;
 			sourceTree = "<group>";
 		};
+		247733F12B4A436C0049A64A /* 24_01 */ = {
+			isa = PBXGroup;
+			children = (
+				247733752B4254DE0049A64A /* 14405.swift */,
+				247733772B426BEA0049A64A /* main.swift */,
+			);
+			path = 24_01;
+			sourceTree = "<group>";
+		};
+		247733F22B4A43800049A64A /* 2024 */ = {
+			isa = PBXGroup;
+			children = (
+				247733F12B4A436C0049A64A /* 24_01 */,
+			);
+			path = 2024;
+			sourceTree = "<group>";
+		};
 		24A9DA152A5FF87D00CD8EB6 /* 22_11 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1367,6 +1382,7 @@
 				243F57C52A244CAC00ADC1D8 /* unsolved */,
 				245446162A53FCE4009C225E /* 2022 */,
 				245446152A53FCBB009C225E /* 2023 */,
+				247733F22B4A43800049A64A /* 2024 */,
 			);
 			path = BOJ;
 			sourceTree = "<group>";
