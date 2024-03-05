@@ -9,38 +9,28 @@
 
 import Foundation
 
-// 입력
-let nl = readLine()!.split(separator: " ").map{ Int(String($0))! }
+let nl = readLine()!.split(separator: " ").map { Int(String($0))! }
 let (n,l) = (nl[0], nl[1])
 
-var arr = [(Int,Int)]()
-for _ in 0 ..< n {
-    let input = readLine()!.split(separator: " ").map{ Int(String($0))! }
-    arr.append((input[0], input[1]))
+var arr = [(Int, Int)]()
+for _ in 0..<n {
+    let se = readLine()!.split(separator: " ").map { Int(String($0))! }
+    arr.append((se[0], se[1]))
 }
 
-// 풀이
-arr.sort{ $0.0 < $1.0 }
+arr.sort { $0.0 < $1.0 }
 
-var result = 0
-var location = 0
-for (start, end) in arr {
-    if location >= end {
-        continue
-    }
+var ans = 0
+var loc = 0
+for (s,e) in arr {
+    if loc > e { continue }
     
-    // 시작점
-    location = max(location, start)
+    loc = max(loc, s)
     
-    // 널빤지 설치 개수
-    var cnt = (end - location) / l
-    if (end - location) % l > 0 {
-        cnt += 1
-    }
+    let dist = e - loc
+    let val = dist % l == 0 ? dist / l : dist / l + 1
     
-    location += l * cnt
-    result += cnt
+    loc += l * val
+    ans += val
 }
-
-// 출력
-print(result)
+print(ans)
