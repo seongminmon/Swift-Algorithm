@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		247314F22B95A43500E89184 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247314F12B95A43500E89184 /* main.swift */; };
+		2473161B2BAEAE4D00E89184 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247316102BAEA72900E89184 /* main.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -407,7 +407,13 @@
 		246611FC2AF0B94C00A830D7 /* 2631.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 2631.swift; sourceTree = "<group>"; };
 		246611FE2AF0E61700A830D7 /* 2623.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 2623.swift; sourceTree = "<group>"; };
 		246612052AF2046B00A830D7 /* 17471.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 17471.swift; sourceTree = "<group>"; };
-		247314F12B95A43500E89184 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		247314F12B95A43500E89184 /* 15662.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 15662.swift; sourceTree = "<group>"; };
+		2473160B2BA984BB00E89184 /* 17822_unsolved.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 17822_unsolved.swift; sourceTree = "<group>"; };
+		2473160D2BAEA4B800E89184 /* 가장 많이 받은 선물.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "가장 많이 받은 선물.swift"; sourceTree = "<group>"; };
+		247316102BAEA72900E89184 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		247316122BAEA88300E89184 /* unsolved2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = unsolved2.swift; sourceTree = "<group>"; };
+		247316172BAEA9F300E89184 /* unsolved3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = unsolved3.swift; sourceTree = "<group>"; };
+		247316192BAEADB300E89184 /* unsolved4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = unsolved4.swift; sourceTree = "<group>"; };
 		2477330C2B3BE9BC0049A64A /* 14391.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 14391.swift; sourceTree = "<group>"; };
 		2477330E2B3BFEEB0049A64A /* 13244.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 13244.swift; sourceTree = "<group>"; };
 		247733752B4254DE0049A64A /* 14405.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 14405.swift; sourceTree = "<group>"; };
@@ -829,6 +835,7 @@
 				24AC40D42A88CF46007C25EB /* 2022 KAKAO BLIND RECRUITMENT */,
 				24AC40E32A8DF5F7007C25EB /* 2022 KAKAO TECH INTERNSHIP */,
 				24AC40EE2A948E4A007C25EB /* 2023 KAKAO BLIND RECRUITMENT */,
+				2473160F2BAEA4BF00E89184 /* 2024 KAKAO WINTER INTERNSHIP */,
 			);
 			name = "카카오 코딩테스트";
 			path = "카카오 코딩테스트";
@@ -1182,9 +1189,22 @@
 		247315282B96F3B100E89184 /* 24_03 */ = {
 			isa = PBXGroup;
 			children = (
-				247314F12B95A43500E89184 /* main.swift */,
+				247314F12B95A43500E89184 /* 15662.swift */,
+				2473160B2BA984BB00E89184 /* 17822_unsolved.swift */,
 			);
 			path = 24_03;
+			sourceTree = "<group>";
+		};
+		2473160F2BAEA4BF00E89184 /* 2024 KAKAO WINTER INTERNSHIP */ = {
+			isa = PBXGroup;
+			children = (
+				2473160D2BAEA4B800E89184 /* 가장 많이 받은 선물.swift */,
+				247316102BAEA72900E89184 /* main.swift */,
+				247316122BAEA88300E89184 /* unsolved2.swift */,
+				247316172BAEA9F300E89184 /* unsolved3.swift */,
+				247316192BAEADB300E89184 /* unsolved4.swift */,
+			);
+			path = "2024 KAKAO WINTER INTERNSHIP";
 			sourceTree = "<group>";
 		};
 		247733F12B4A436C0049A64A /* 24_01 */ = {
@@ -1644,7 +1664,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				247314F22B95A43500E89184 /* main.swift in Sources */,
+				2473161B2BAEAE4D00E89184 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
