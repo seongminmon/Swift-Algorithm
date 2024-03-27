@@ -4,28 +4,73 @@
 //
 //  Created by 김성민 on 3/23/24.
 //
-// 도넛과 막대 그래프
+// 주사위 고르기
 // 2024 KAKAO WINTER INTERNSHIP
-// Lv.2
-// https://school.programmers.co.kr/learn/courses/30/lessons/258711
+// Lv.3
+// https://school.programmers.co.kr/learn/courses/30/lessons/258709
 
 import Foundation
 
-func solution(_ edges:[[Int]]) -> [Int] {
-        var SIZE = 0
-    for edge in edges {
-        let (a,b) = (edge[0], edge[1])
-        SIZE = max(SIZE, a, b)
+func solution(_ dice:[[Int]]) -> [Int] {
+    let n = dice.count
+    
+    var result = [Int]()
+    var maxWin = 0
+    var visited = [Bool](repeating: false, count: n)
+    
+    func calculate() -> Int {
+        var win = 0
+        
+        func combi(_ depth: Int, _ start: Int, _ a: Int, _ b: Int) {
+            if depth == n {
+                if a > b { win += 1 }
+                return
+            }
+            
+            for i in start..<n {
+                for j in 0..<6 {
+                    if visited[i] {
+                        combi(depth+1, i+1, a + dice[i][j], b)
+                    } else {
+                        combi(depth+1, i+1, a, b + dice[i][j])
+                    }
+                }
+            }
+        }
+        
+        combi(0, 0, 0, 0)
+        
+        return win
     }
     
-    var graph = [[Int]](repeating: [], count: SIZE+1)
-    for edge in edges {
-        let (a,b) = (edge[0], edge[1])
-        graph[a].append(b)
+    func dfs(_ depth: Int, _ start: Int) {
+        if depth == n/2 {
+            let temp = calculate()
+            if maxWin < temp {
+                var tempResult = [Int]()
+                for i in 0..<n {
+                    if visited[i] {
+                        tempResult.append(i+1)
+                    }
+                }
+                maxWin = temp
+                result = tempResult
+            }
+            return
+        }
+        
+        for i in start..<n {
+            visited[i] = true
+            dfs(depth+1, i+1)
+            visited[i] = false
+        }
     }
-    print(graph)
-    return []
+    
+    dfs(0, 0)
+    
+    return result
 }
 
-print(solution([[2,3], [4,3], [1,1], [2,1]]))
-print(solution([[4, 11], [1, 12], [8, 3], [12, 7], [4, 2], [7, 11], [4, 8], [9, 6], [10, 11], [6, 10], [3, 5], [11, 1], [5, 3], [11, 9], [3, 8]]))
+print(solution([[1, 2, 3, 4, 5, 6], [3, 3, 3, 3, 4, 4], [1, 3, 3, 4, 4, 4], [1, 1, 4, 4, 5, 5]]))
+print(solution([[1, 2, 3, 4, 5, 6], [2, 2, 4, 4, 6, 6]]))
+print(solution([[40, 41, 42, 43, 44, 45], [43, 43, 42, 42, 41, 41], [1, 1, 80, 80, 80, 80], [70, 70, 1, 1, 70, 70]]))
