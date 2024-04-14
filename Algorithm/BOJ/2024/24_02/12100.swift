@@ -21,7 +21,7 @@ func rotate(_ graph: [[Int]]) -> [[Int]] {
     var newGraph = graph
     for i in 0..<n {
         for j in 0..<n {
-            newGraph[j][n-1-i] = graph[i][j]
+            newGraph[i][j] = graph[n-j-1][i]
         }
     }
     return newGraph

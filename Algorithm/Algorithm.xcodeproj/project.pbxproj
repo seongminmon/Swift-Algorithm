@@ -216,7 +216,6 @@
 		245212772AE547EB009607ED /* 지형 이동.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "지형 이동.swift"; sourceTree = "<group>"; };
 		2452127A2AE65EBC009607ED /* 멀쩡한 사각형.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "멀쩡한 사각형.swift"; sourceTree = "<group>"; };
 		2452127D2AE789DB009607ED /* 2981.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 2981.swift; sourceTree = "<group>"; };
-		2452127F2AE7D210009607ED /* 피보나치 수.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "피보나치 수.swift"; sourceTree = "<group>"; };
 		245212822AE7D5E2009607ED /* 1987.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 1987.swift; sourceTree = "<group>"; };
 		245212852AE8D9A3009607ED /* 1806.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 1806.swift; sourceTree = "<group>"; };
 		245212872AE8DE80009607ED /* 1016.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 1016.swift; sourceTree = "<group>"; };
@@ -803,15 +802,6 @@
 				2452127A2AE65EBC009607ED /* 멀쩡한 사각형.swift */,
 			);
 			path = "Summer Winter Coding(2019)";
-			sourceTree = "<group>";
-		};
-		245212812AE7D4C7009607ED /* 코딩테스트 연습 힌트 모음집 */ = {
-			isa = PBXGroup;
-			children = (
-				2452127F2AE7D210009607ED /* 피보나치 수.swift */,
-			);
-			name = "코딩테스트 연습 힌트 모음집";
-			path = "코딩테스트 연습 힌트 모음집";
 			sourceTree = "<group>";
 		};
 		245212842AE7D72F009607ED /* 카카오 코딩테스트 */ = {
@@ -1439,11 +1429,10 @@
 		24DD150B2A0A656F00AA1845 /* Programmers */ = {
 			isa = PBXGroup;
 			children = (
-				24DD15172A0A687900AA1845 /* HighScore_Kit */,
 				245212842AE7D72F009607ED /* 카카오 코딩테스트 */,
+				24DD15172A0A687900AA1845 /* HighScore_Kit */,
 				245212602AE3E5D9009607ED /* Summer Winter Coding(~2018) */,
 				245212792AE5481B009607ED /* Summer Winter Coding(2019) */,
-				245212812AE7D4C7009607ED /* 코딩테스트 연습 힌트 모음집 */,
 			);
 			path = Programmers;
 			sourceTree = "<group>";
