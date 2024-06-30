@@ -9,20 +9,33 @@
 
 import Foundation
 
-// 입력
 let n = Int(readLine()!)!
-var arr = readLine()!.split(separator: " ").map{ Int(String($0))! }
+let arr = readLine()!.split(separator: " ").map{ Int(String($0))! }
 
-// 풀이
-var dp = [Int](repeating: 1, count: n)
-for i in 1 ..< n {
-    for j in 0 ..< i {
-        if arr[j] < arr[i] {
-            dp[i] = max(dp[i], dp[j] + 1)
+var ans: [Int] = [arr[0]]
+
+func binarySearch(_ target: Int) -> Int {
+    var start = 0
+    var end = ans.count - 1
+    while start < end {
+        let mid = (start + end) / 2
+        
+        if ans[mid] >= target {
+            end = mid
+        } else {
+            start = mid + 1
         }
+    }
+    return end
+}
+
+for i in 1..<n {
+    if arr[i] > ans.last! {
+        ans.append(arr[i])
+    } else {
+        let idx = binarySearch(arr[i])
+        ans[idx] = arr[i]
     }
 }
 
-// 출력
-//print(dp)
-print(dp.max()!)
+print(ans.count)
