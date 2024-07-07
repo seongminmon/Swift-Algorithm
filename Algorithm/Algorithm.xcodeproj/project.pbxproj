@@ -1230,6 +1230,7 @@
 				248456842BC7D32D000A9329 /* 24_04 */,
 				246F700C2BE5FA1400DBEFA0 /* 24_05 */,
 				24B26EB02C2819C00005F11E /* 24_06 */,
+				24AF66412C3AC15D00CCAAF4 /* 24_07 */,
 			);
 			path = 2024;
 			sourceTree = "<group>";
@@ -1422,12 +1423,19 @@
 			path = "2023 KAKAO BLIND RECRUITMENT";
 			sourceTree = "<group>";
 		};
+		24AF66412C3AC15D00CCAAF4 /* 24_07 */ = {
+			isa = PBXGroup;
+			children = (
+				24B3BD502C319FD50088CDB7 /* main.swift */,
+			);
+			path = 24_07;
+			sourceTree = "<group>";
+		};
 		24B26EB02C2819C00005F11E /* 24_06 */ = {
 			isa = PBXGroup;
 			children = (
 				246F705C2BEB5D4500DBEFA0 /* 2670.swift */,
 				24B26EAE2C2819540005F11E /* 14002.swift */,
-				24B3BD502C319FD50088CDB7 /* main.swift */,
 			);
 			path = 24_06;
 			sourceTree = "<group>";

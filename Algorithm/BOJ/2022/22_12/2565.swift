@@ -9,26 +9,20 @@
 
 import Foundation
 
-// 입력
 let n = Int(readLine()!)!
-var AB = [(Int,Int)]()
-for _ in 0 ..< n {
-    let input = readLine()!.split(separator: " ").map{ Int(String($0))! }
-    AB.append((input[0], input[1]))
+var arr = [(Int, Int)]()
+for _ in 0..<n {
+    let input = readLine()!.split(separator: " ").map { Int(String($0))! }
+    arr.append((input[0], input[1]))
 }
-
-// 풀이
-AB.sort{ $0.0 < $1.0 }
-var B = AB.map{ $0.1 }
+arr.sort { $0.0 < $1.0 }
 
 var dp = [Int](repeating: 1, count: n)
-for i in 1 ..< n {
-    for j in 0 ..< i {
-        if B[j] < B[i] {
+for i in 1..<n {
+    for j in 0..<i {
+        if arr[j].1 < arr[i].1 {
             dp[i] = max(dp[i], dp[j] + 1)
         }
     }
 }
-
-// 출력
 print(n - dp.max()!)
