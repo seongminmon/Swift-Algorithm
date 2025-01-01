@@ -7,7 +7,7 @@
 // [PCCP 기출문제] 1번 / 동영상 재생기
 // PCCP 기출문제
 // Lv.1
-// https://school.programmers.co.kr/learn/courses/30/lessons/340213
+// https://school.programmers.co.kr/learn/courses/30/lessons/340213?language=swift
 
 import Foundation
 
