@@ -4,7 +4,7 @@
 //
 //  Created by 김성민 on 1/1/25.
 //
-// [PCCP 기출문제] 2번 / 충돌위험 찾기
+// [PCCP 기출문제] 3번 / 충돌위험 찾기
 // PCCP 기출문제
 // Lv.2
 // https://school.programmers.co.kr/learn/courses/30/lessons/340211
